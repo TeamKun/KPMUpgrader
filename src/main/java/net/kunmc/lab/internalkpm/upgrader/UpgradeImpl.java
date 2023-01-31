@@ -180,12 +180,13 @@ public class UpgradeImpl
         assert toVersion != null;
         KPMMigrator.doMigrate(this.registry, this.currentKPM.getDataFolder().toPath(), this.currentKPMVersion, toVersion);
 
-        if (!this.installNewKPM(result))
-            return;
+         Runner.runLater(() -> {
+             if (!this.installNewKPM(result))
+                 return;
+            this.logger.info("サーバをリロードしています ...");
+            this.plugin.getServer().reload();
 
-        this.logger.info("サーバをリロードしています ...");
-        this.plugin.getServer().reload();
-
-        this.logger.info("KPM のアッグレートが完了しました。");
+            this.logger.info("KPM のアッグレートが完了しました。");
+        }, 21L);  // Because KPM removes itself after 20 ticks.
     }
 }
