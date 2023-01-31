@@ -1,8 +1,8 @@
-package net.kunmc.lab.kpm.kpmupgrader.migrator.migrators;
+package net.kunmc.lab.internalkpm.upgrader.migrator.migrators;
 
+import net.kunmc.lab.internalkpm.upgrader.KPMUpgrader;
+import net.kunmc.lab.internalkpm.upgrader.migrator.KPMMigrateAction;
 import net.kunmc.lab.kpm.interfaces.KPMRegistry;
-import net.kunmc.lab.kpm.kpmupgrader.KPMUpgraderPlugin;
-import net.kunmc.lab.kpm.kpmupgrader.migrator.KPMMigrateAction;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -97,7 +97,7 @@ public class ConfigMigrator implements KPMMigrateAction
         }
 
 
-        ClassLoader classLoader = KPMUpgraderPlugin.class.getClassLoader();
+        ClassLoader classLoader = KPMUpgrader.class.getClassLoader();
         try (BufferedReader r = new BufferedReader(
                 new InputStreamReader(
                         Objects.requireNonNull(classLoader.getResourceAsStream("config.v3.yml"))

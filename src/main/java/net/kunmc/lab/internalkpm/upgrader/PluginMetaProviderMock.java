@@ -1,4 +1,4 @@
-package net.kunmc.lab.kpm.kpmupgrader;
+package net.kunmc.lab.internalkpm.upgrader;
 
 import net.kunmc.lab.kpm.db.Transaction;
 import net.kunmc.lab.kpm.enums.metadata.InstallOperator;
@@ -12,7 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
 

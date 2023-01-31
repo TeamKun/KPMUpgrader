@@ -1,4 +1,4 @@
-package net.kunmc.lab.kpm.kpmupgrader;
+package net.kunmc.lab.internalkpm.upgrader;
 
 import net.kunmc.lab.kpm.interfaces.kpminfo.KPMInfoManager;
 import net.kunmc.lab.kpm.kpminfo.KPMInformationFile;

@@ -1,4 +1,4 @@
-package net.kunmc.lab.kpm.kpmupgrader;
+package net.kunmc.lab.internalkpm.upgrader;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -11,11 +11,11 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nonnull;
 import java.util.Objects;
 
-public final class KPMUpgraderPlugin extends JavaPlugin implements CommandExecutor
+public final class KPMUpgrader extends JavaPlugin implements CommandExecutor
 {
     private final UpgradeImpl impl;
 
-    public KPMUpgraderPlugin()
+    public KPMUpgrader()
     {
         this.impl = new UpgradeImpl(this);
     }

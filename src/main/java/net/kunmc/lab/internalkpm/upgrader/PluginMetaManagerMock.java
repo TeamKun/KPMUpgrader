@@ -1,4 +1,4 @@
-package net.kunmc.lab.kpm.kpmupgrader;
+package net.kunmc.lab.internalkpm.upgrader;
 
 import net.kunmc.lab.kpm.enums.metadata.InstallOperator;
 import net.kunmc.lab.kpm.interfaces.meta.PluginMetaManager;

@@ -1,4 +1,4 @@
-package net.kunmc.lab.kpm.kpmupgrader.migrator;
+package net.kunmc.lab.internalkpm.upgrader.migrator;
 
 import net.kunmc.lab.kpm.interfaces.KPMRegistry;
 import net.kunmc.lab.kpm.versioning.Version;

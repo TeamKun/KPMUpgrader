@@ -1,4 +1,4 @@
-package net.kunmc.lab.kpm.kpmupgrader;
+package net.kunmc.lab.internalkpm.upgrader;
 
 import lombok.Getter;
 import net.kunmc.lab.kpm.TokenStore;

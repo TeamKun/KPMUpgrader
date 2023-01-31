@@ -47,7 +47,7 @@
                                 </relocation>
                                 <relocation>
                                     <pattern>net.kunmc.lab.kpm</pattern>
-                                    <shadedPattern>net.kunmc.lab.plugin.kpmupgrader.daemon</shadedPattern>
+                                    <shadedPattern>net.kunmc.lab.kpm.kpmupgrader.daemon</shadedPattern>
                                 </relocation>
                             </relocations>
                             <artifactSet>

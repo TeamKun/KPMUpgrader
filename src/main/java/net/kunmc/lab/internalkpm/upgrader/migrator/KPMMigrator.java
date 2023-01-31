@@ -1,9 +1,9 @@
-package net.kunmc.lab.kpm.kpmupgrader.migrator;
+package net.kunmc.lab.internalkpm.upgrader.migrator;
 
 import lombok.Getter;
 import lombok.experimental.UtilityClass;
 import net.kunmc.lab.kpm.interfaces.KPMRegistry;
-import net.kunmc.lab.kpm.kpmupgrader.migrator.migrators.ConfigMigrator;
+import net.kunmc.lab.internalkpm.upgrader.migrator.migrators.ConfigMigrator;
 import net.kunmc.lab.kpm.versioning.Version;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;

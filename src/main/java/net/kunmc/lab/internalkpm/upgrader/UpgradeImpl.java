@@ -1,5 +1,6 @@
-package net.kunmc.lab.kpm.kpmupgrader;
+package net.kunmc.lab.internalkpm.upgrader;
 
+import net.kunmc.lab.internalkpm.upgrader.migrator.KPMMigrator;
 import net.kunmc.lab.kpm.installer.impls.install.InstallArgument;
 import net.kunmc.lab.kpm.installer.impls.install.InstallTasks;
 import net.kunmc.lab.kpm.installer.impls.install.PluginInstaller;
@@ -14,7 +15,6 @@ import net.kunmc.lab.kpm.interfaces.resolver.result.SuccessResult;
 import net.kunmc.lab.kpm.signal.SignalHandleManager;
 import net.kunmc.lab.kpm.versioning.Version;
 import net.kunmc.lab.peyangpaperutils.lib.utils.Runner;
-import net.kunmc.lab.kpm.kpmupgrader.migrator.KPMMigrator;
 import org.bukkit.plugin.Plugin;
 
 import java.io.IOException;
@@ -26,14 +26,14 @@ public class UpgradeImpl
     private static final String KPM_OWNER = "TeamKUN";
     private static final String KPM_NAME = "TeamKunPluginManager";
 
-    private final KPMUpgraderPlugin plugin;
+    private final KPMUpgrader plugin;
     private final Logger logger;
     private final Plugin currentKPM;
     private final Version currentKPMVersion;
 
     private KPMRegistry registry;
 
-    public UpgradeImpl(KPMUpgraderPlugin plugin)
+    public UpgradeImpl(KPMUpgrader plugin)
     {
         this.plugin = plugin;
         this.logger = plugin.getLogger();
