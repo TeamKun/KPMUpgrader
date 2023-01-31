@@ -122,6 +122,6 @@ public class ConfigMigrator implements KPMMigrateAction
     @Override
     public String getNeedMigrateVersionRange()
     {
-        return "v2.8.3...";
+        return "v2.0.0...";
     }
 }
