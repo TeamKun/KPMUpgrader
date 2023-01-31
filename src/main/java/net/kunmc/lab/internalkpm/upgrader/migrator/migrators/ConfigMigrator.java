@@ -87,7 +87,7 @@ public class ConfigMigrator implements KPMMigrateAction
 
         try
         {
-            Files.delete(configPath);
+            Files.move(configPath, kpmDataFolder.resolve("config.bak.yml"));
             Files.createFile(configPath);
         }
         catch (IOException e)
