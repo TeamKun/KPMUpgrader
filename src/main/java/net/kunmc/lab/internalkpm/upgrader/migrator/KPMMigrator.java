@@ -3,7 +3,7 @@ package net.kunmc.lab.internalkpm.upgrader.migrator;
 import lombok.Getter;
 import lombok.experimental.UtilityClass;
 import net.kunmc.lab.kpm.interfaces.KPMRegistry;
-import net.kunmc.lab.internalkpm.upgrader.migrator.migrators.ConfigMigrator;
+import net.kunmc.lab.internalkpm.upgrader.migrator.migrators.V2ConfigMigrator;
 import net.kunmc.lab.kpm.versioning.Version;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
@@ -22,7 +22,7 @@ public class KPMMigrator
     static
     {
         MIGRATE_ACTIONS = new ArrayList<>();
-        MIGRATE_ACTIONS.add(new ConfigMigrator());
+        MIGRATE_ACTIONS.add(new V2ConfigMigrator());
     }
 
     public static void doMigrate(@NotNull KPMRegistry daemon, @NotNull Path kpmDataFolder,

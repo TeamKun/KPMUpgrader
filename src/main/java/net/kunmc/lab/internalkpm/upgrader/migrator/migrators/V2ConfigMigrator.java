@@ -19,7 +19,7 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ConfigMigrator implements KPMMigrateAction
+public class V2ConfigMigrator implements KPMMigrateAction
 {
     private static final Pattern VARIABLE_PATTERN = Pattern.compile("\\$(?<name>[\\w.]+)\\$");
 
@@ -122,6 +122,6 @@ public class ConfigMigrator implements KPMMigrateAction
     @Override
     public String getNeedMigrateVersionRange()
     {
-        return "v2.0.0...";
+        return "v2.0.0...v3.0.0-pre9";
     }
 }
