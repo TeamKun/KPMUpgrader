@@ -72,13 +72,26 @@ public class UpgradeImpl
             this.runUpgrade(LegacySupport.fetchLatestVersion(this.registry));
     }
 
-    private void destructSelf()
+    private void destructSelf(boolean showMessage)
     {
-        this.logger.info("お使いの KPM は、自動アッグレートに対応していないません。手動で KPM をアッグレートしてください。");
+        if (showMessage)
+            this.logger.info("お使いの KPM は、自動アッグレートに対応していないません。手動で KPM をアッグレートしてください。");
+
+        String destructCommand;
+        if (LegacySupport.isLegacyMajor(this.currentKPM))
+            destructCommand = "kpm rm " + this.plugin.getName();
+        else
+            destructCommand = "kpm upgrade-kpm destruct";
+
         Runner.run(() -> this.plugin.getServer().dispatchCommand(
                 this.plugin.getServer().getConsoleSender(),
-                "kpm upgrade-kpm destruct"
+                destructCommand
         ));
+    }
+
+    private void destructSelf()
+    {
+        this.destructSelf(true);
     }
 
     private SuccessResult resolveKPM(String version)
@@ -166,12 +179,31 @@ public class UpgradeImpl
         }
     }
 
+    private boolean checkAlreadyLatestInstalled(String version)
+    {
+        if (this.currentKPMVersion == null)
+            return false;
+
+        boolean isLatest = this.currentKPMVersion.isNewerThanOrEqualTo(Version.of(version));
+        if (isLatest)
+        {
+            this.logger.warning("KPM は最新です。");
+            this.destructSelf(false);
+        }
+
+        return isLatest;
+    }
+
+
     public void runUpgrade(String version)
     {
         this.logger.info("KPM をアッグレートしています ...");
 
         SuccessResult result = this.resolveKPM(version);
         if (result == null)
+            return;
+
+        if (this.checkAlreadyLatestInstalled(result.getVersion()))
             return;
 
         if (!this.removeCurrentKPM())
