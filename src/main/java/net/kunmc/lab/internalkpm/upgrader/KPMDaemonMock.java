@@ -60,7 +60,13 @@ public class KPMDaemonMock implements KPMRegistry
                 String tokenEnv = System.getenv("TOKEN");
 
                 if (tokenEnv == null || tokenEnv.isEmpty())
-                    throw new IllegalStateException("Token is not set.");
+                {
+                    String oldToken;
+                    if ((oldToken = LegacySupport.retrieveLegacyToken()) != null)
+                        this.getTokenStore().storeToken(oldToken, false);
+                    else
+                        throw new IllegalStateException("Token is not set.");
+                }
 
                 this.getTokenStore().fromEnv();
             }

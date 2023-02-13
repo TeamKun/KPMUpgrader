@@ -65,6 +65,9 @@ public class UpgradeImpl
                         kpmDataFolder.resolve("token_key.dat")
                 )
         );
+
+        if (LegacySupport.isLegacyMajor(this.currentKPM))
+            this.runUpgrade(LegacySupport.fetchLatestVersion(this.registry));
     }
 
     private void destructSelf()
