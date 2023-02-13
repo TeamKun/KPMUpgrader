@@ -1,4 +1,4 @@
-package net.kunmc.lab.internalkpm.upgrader;
+package net.kunmc.lab.internalkpm.upgrader.mocks;
 
 import net.kunmc.lab.kpm.db.Transaction;
 import net.kunmc.lab.kpm.enums.metadata.InstallOperator;

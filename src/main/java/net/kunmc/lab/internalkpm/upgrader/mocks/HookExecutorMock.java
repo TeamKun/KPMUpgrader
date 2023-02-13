@@ -1,4 +1,4 @@
-package net.kunmc.lab.internalkpm.upgrader;
+package net.kunmc.lab.internalkpm.upgrader.mocks;
 
 import lombok.AllArgsConstructor;
 import net.kunmc.lab.kpm.interfaces.KPMRegistry;

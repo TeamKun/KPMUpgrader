@@ -1,6 +1,7 @@
-package net.kunmc.lab.internalkpm.upgrader;
+package net.kunmc.lab.internalkpm.upgrader.mocks;
 
 import lombok.Getter;
+import net.kunmc.lab.internalkpm.upgrader.LegacySupport;
 import net.kunmc.lab.kpm.TokenStore;
 import net.kunmc.lab.kpm.http.Requests;
 import net.kunmc.lab.kpm.interfaces.KPMEnvironment;
