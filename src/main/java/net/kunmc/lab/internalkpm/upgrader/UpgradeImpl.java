@@ -18,6 +18,7 @@ import net.kunmc.lab.kpm.interfaces.resolver.result.SuccessResult;
 import net.kunmc.lab.kpm.signal.SignalHandleManager;
 import net.kunmc.lab.kpm.versioning.Version;
 import net.kunmc.lab.peyangpaperutils.lib.utils.Runner;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
 import java.io.IOException;
@@ -32,7 +33,7 @@ public class UpgradeImpl
 
     private final KPMUpgrader plugin;
     private final Logger logger;
-    private final Plugin currentKPM;
+    private Plugin currentKPM;
     private final Version currentKPMVersion;
 
     private KPMRegistry registry;
@@ -96,10 +97,10 @@ public class UpgradeImpl
         else
             destructCommand = "kpm upgrade-kpm destruct";
 
-        Runner.run(() -> this.plugin.getServer().dispatchCommand(
+        this.plugin.getServer().dispatchCommand(
                 this.plugin.getServer().getConsoleSender(),
                 destructCommand
-        ));
+        );
     }
 
     private void destructSelf()
@@ -254,6 +255,9 @@ public class UpgradeImpl
             this.plugin.getServer().reload();
 
             this.logger.info("KPM のアッグレートが完了しました。");
+
+            this.currentKPM = Bukkit.getPluginManager().getPlugin("TeamKunPluginManager");
+            this.destructSelf(false);
         }, 21L);  // Because KPM removes itself after 20 ticks.
     }
 }
