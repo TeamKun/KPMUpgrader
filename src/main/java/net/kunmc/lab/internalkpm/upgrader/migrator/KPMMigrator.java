@@ -2,6 +2,7 @@ package net.kunmc.lab.internalkpm.upgrader.migrator;
 
 import lombok.Getter;
 import lombok.experimental.UtilityClass;
+import net.kunmc.lab.internalkpm.upgrader.migrator.migrators.OldDBWiper;
 import net.kunmc.lab.kpm.interfaces.KPMRegistry;
 import net.kunmc.lab.internalkpm.upgrader.migrator.migrators.V2ConfigMigrator;
 import net.kunmc.lab.kpm.versioning.Version;
@@ -22,6 +23,7 @@ public class KPMMigrator
     static
     {
         MIGRATE_ACTIONS = new ArrayList<>();
+        MIGRATE_ACTIONS.add(new OldDBWiper());
         MIGRATE_ACTIONS.add(new V2ConfigMigrator());
     }
 
