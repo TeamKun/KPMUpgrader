@@ -23,9 +23,9 @@ public class OldDBWiper implements KPMMigrateAction
         FileConfiguration config = YamlConfiguration.loadConfiguration(configPath.toFile());
 
         Path dependPath =
-                kpmDataFolder.resolve(config.getString("dependPath", "depend.yml"));
+                kpmDataFolder.resolve(config.getString("dependPath", "depend.db"));
         Path resolvePath =
-                kpmDataFolder.resolve(config.getString("resolvePath", "resolve.yml"));
+                kpmDataFolder.resolve(config.getString("resolvePath", "resolve.db"));
         Path databaseDir = kpmDataFolder.resolve("database");
 
         try

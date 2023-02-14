@@ -84,6 +84,12 @@ public class UpgradeImpl
         if (showMessage)
             this.logger.info("お使いの KPM は、自動アッグレートに対応していないません。手動で KPM をアッグレートしてください。");
 
+        if (this.currentKPM == null)
+        {
+            this.logger.info("KPMUpgrader をサーバーから手動で削除してください。");
+            return;
+        }
+
         String destructCommand;
         if (LegacySupport.isLegacyMajor(this.currentKPM))
             destructCommand = "kpm rm " + this.plugin.getName();
