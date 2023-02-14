@@ -14,6 +14,16 @@ import java.util.stream.Stream;
 
 public class OldDBWiper implements KPMMigrateAction
 {
+    private static Path normalizePath(Path base, String path)
+    {
+        Path result;
+        if (Files.exists(result = base.resolve(path)))
+            return result;
+        if (path.startsWith("/"))
+            result = base.resolve(path.substring(1));
+        return result;
+    }
+
     @Override
     public void migrate(@NotNull KPMRegistry daemon, @NotNull Path kpmDataFolder)
     {
@@ -22,10 +32,8 @@ public class OldDBWiper implements KPMMigrateAction
         Path configPath = kpmDataFolder.resolve("config.yml");
         FileConfiguration config = YamlConfiguration.loadConfiguration(configPath.toFile());
 
-        Path dependPath =
-                kpmDataFolder.resolve(config.getString("dependPath", "depend.db"));
-        Path resolvePath =
-                kpmDataFolder.resolve(config.getString("resolvePath", "resolve.db"));
+        Path dependPath = normalizePath(kpmDataFolder, config.getString("dependPath", "depend.db"));
+        Path resolvePath = normalizePath(kpmDataFolder, config.getString("resolvePath", "resolve.db"));
         Path databaseDir = kpmDataFolder.resolve("database");
 
         try
@@ -33,7 +41,7 @@ public class OldDBWiper implements KPMMigrateAction
             Files.deleteIfExists(dependPath);
             Files.deleteIfExists(resolvePath);
 
-            if (Files.exists(databaseDir))
+            if (Files.exists(databaseDir) && Files.isDirectory(databaseDir))
             {
                 try (Stream<Path> files = Files.walk(databaseDir))
                 {
@@ -49,6 +57,8 @@ public class OldDBWiper implements KPMMigrateAction
                                 }
                             });
                 }
+
+                Files.delete(databaseDir);
             }
         }
         catch (IOException e)
