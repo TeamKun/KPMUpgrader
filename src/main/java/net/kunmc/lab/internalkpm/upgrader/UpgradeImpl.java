@@ -21,6 +21,7 @@ import net.kunmc.lab.peyangpaperutils.lib.utils.Runner;
 import org.bukkit.plugin.Plugin;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.logging.Logger;
 
@@ -212,8 +213,22 @@ public class UpgradeImpl
         if (this.checkAlreadyLatestInstalled(result.getVersion()))
             return;
 
-        if (!this.removeCurrentKPM())
+        try
+        {
+            Files.createDirectory(this.currentKPM.getDataFolder().toPath().resolve(".caches"));
+        }
+        catch (IOException e)
+        {
+            this.logger.warning("キャッシュディレクトリの作成に失敗しました。");
+            e.printStackTrace();
             return;
+        }
+
+        if (!this.removeCurrentKPM())
+        {
+            this.destructSelf();
+            return;
+        }
 
         this.logger.info("データを移行しています ...");
 
@@ -225,7 +240,10 @@ public class UpgradeImpl
 
          Runner.runLater(() -> {
              if (!this.installNewKPM(result))
+             {
+                 this.destructSelf();
                  return;
+             }
             this.logger.info("サーバをリロードしています ...");
             this.plugin.getServer().reload();
 
