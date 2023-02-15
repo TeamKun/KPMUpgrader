@@ -15,7 +15,7 @@ public class TokenMigrator implements KPMMigrateAction
     {
         daemon.getLogger().info("Migrating token...");
 
-        Path tokenPath = kpmDataFolder.getParent().getParent().resolve("kpm.vault");
+        Path tokenPath = kpmDataFolder.toAbsolutePath().getParent().getParent().resolve("kpm.vault");
 
         if (!Files.exists(tokenPath))
         {
