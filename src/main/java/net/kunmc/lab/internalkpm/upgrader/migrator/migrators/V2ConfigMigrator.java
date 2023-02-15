@@ -122,6 +122,6 @@ public class V2ConfigMigrator implements KPMMigrateAction
     @Override
     public String getNeedMigrateVersionRange()
     {
-        return "v2.0.0...v3.0.0-pre9";
+        return "...v2.9.9";
     }
 }
