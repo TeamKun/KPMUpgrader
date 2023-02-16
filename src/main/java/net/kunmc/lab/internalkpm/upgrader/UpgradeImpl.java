@@ -83,7 +83,7 @@ public class UpgradeImpl
     private void destructSelf(boolean showMessage)
     {
         if (showMessage)
-            this.logger.info("お使いの KPM は、自動アップグレードに対応していないません。手動で KPM をアッグレートしてください。");
+            this.logger.info("お使いの KPM は、自動アップグレードに対応しておりません。手動で KPM をアッグレートしてください。");
 
         if (this.currentKPM == null)
         {
