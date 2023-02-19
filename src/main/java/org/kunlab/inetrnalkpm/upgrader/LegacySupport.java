@@ -1,4 +1,4 @@
-package net.kunmc.lab.internalkpm.upgrader;
+package org.kunlab.inetrnalkpm.upgrader;
 
 import net.kunmc.lab.kpm.interfaces.KPMRegistry;
 import net.kunmc.lab.kpm.interfaces.resolver.result.ErrorResult;

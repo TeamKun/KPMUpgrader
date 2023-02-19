@@ -1,11 +1,11 @@
-package net.kunmc.lab.internalkpm.upgrader.migrator;
+package org.kunlab.inetrnalkpm.upgrader.migrator;
 
 import lombok.Getter;
 import lombok.experimental.UtilityClass;
-import net.kunmc.lab.internalkpm.upgrader.migrator.migrators.OldDBWiper;
-import net.kunmc.lab.internalkpm.upgrader.migrator.migrators.TokenMigrator;
+import org.kunlab.inetrnalkpm.upgrader.migrator.migrators.OldDBWiper;
+import org.kunlab.inetrnalkpm.upgrader.migrator.migrators.TokenMigrator;
 import net.kunmc.lab.kpm.interfaces.KPMRegistry;
-import net.kunmc.lab.internalkpm.upgrader.migrator.migrators.V2ConfigMigrator;
+import org.kunlab.inetrnalkpm.upgrader.migrator.migrators.V2ConfigMigrator;
 import net.kunmc.lab.kpm.versioning.Version;
 import net.kunmc.lab.peyangpaperutils.lib.utils.Pair;
 import org.apache.commons.lang.StringUtils;

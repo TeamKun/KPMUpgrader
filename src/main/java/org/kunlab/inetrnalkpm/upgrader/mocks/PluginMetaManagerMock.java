@@ -1,4 +1,4 @@
-package net.kunmc.lab.internalkpm.upgrader.mocks;
+package org.kunlab.inetrnalkpm.upgrader.mocks;
 
 import net.kunmc.lab.kpm.enums.metadata.InstallOperator;
 import net.kunmc.lab.kpm.interfaces.meta.PluginMetaManager;

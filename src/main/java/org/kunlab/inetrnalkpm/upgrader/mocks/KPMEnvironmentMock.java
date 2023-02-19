@@ -1,4 +1,4 @@
-package net.kunmc.lab.internalkpm.upgrader.mocks;
+package org.kunlab.inetrnalkpm.upgrader.mocks;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
