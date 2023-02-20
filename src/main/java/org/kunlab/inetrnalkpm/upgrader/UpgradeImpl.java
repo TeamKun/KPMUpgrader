@@ -222,7 +222,9 @@ public class UpgradeImpl
 
         try
         {
-            Files.createDirectory(this.currentKPM.getDataFolder().toPath().resolve(".caches"));
+            Path caches = this.currentKPM.getDataFolder().toPath().resolve(".caches");
+            if (!Files.exists(caches))
+                Files.createDirectories(caches);
         }
         catch (IOException e)
         {
