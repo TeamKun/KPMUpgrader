@@ -14,7 +14,7 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kpm.version>3.0.0-pre9</kpm.version>
+        <kpm.version>3.0.0-pre10</kpm.version>
     </properties>
 
     <build>
@@ -43,11 +43,11 @@
                             <relocations>
                                 <relocation>
                                     <pattern>com.zaxxer.hikari</pattern>
-                                    <shadedPattern>net.kunmc.lab.kpm.hikari</shadedPattern>
+                                    <shadedPattern>org.kunlab.kpm.hikari</shadedPattern>
                                 </relocation>
                                 <relocation>
-                                    <pattern>net.kunmc.lab.kpm</pattern>
-                                    <shadedPattern>net.kunmc.lab.kpm.kpmupgrader.daemon</shadedPattern>
+                                    <pattern>org.kunlab.kpm</pattern>
+                                    <shadedPattern>org.kunlab.kpm.kpmupgrader.daemon</shadedPattern>
                                 </relocation>
                             </relocations>
                             <artifactSet>
@@ -63,7 +63,7 @@
                             </transformers>
                             <filters>
                                 <filter>
-                                    <artifact>net.kunmc.lab.kpm:KPMTasks</artifact>
+                                    <artifact>org.kunlab.kpm:KPMTasks</artifact>
                                     <excludes>
                                         <exclude>net/kunmc/lab/kpm/task/tasks/garbage/**</exclude>
                                         <exclude>net/kunmc/lab/kpm/task/tasks/lookup/**</exclude>
@@ -71,7 +71,7 @@
                                     </excludes>
                                 </filter>
                                 <filter>
-                                    <artifact>net.kunmc.lab.kpm:KPMPluginInstaller</artifact>
+                                    <artifact>org.kunlab.kpm:KPMPluginInstaller</artifact>
                                     <excludes>
                                         <exclude>net/kunmc/lab/kpm/installer/impls/autoremove/**</exclude>
                                         <exclude>net/kunmc/lab/kpm/installer/impls/clean/**</exclude>
@@ -81,7 +81,7 @@
                                     </excludes>
                                 </filter>
                                 <filter>
-                                    <artifact>net.kunmc.lab.kpm:KPMCommon</artifact>
+                                    <artifact>org.kunlab.kpm:KPMCommon</artifact>
                                     <excludes>
                                         <exclude>net/kunmc/lab/kpm/db/**</exclude>
                                     </excludes>
@@ -129,31 +129,31 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>net.kunmc.lab.kpm</groupId>
+            <groupId>com.github.TeamKUN.TeamKUNPluginManager</groupId>
             <artifactId>KPMCommon</artifactId>
             <version>${kpm.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>net.kunmc.lab.kpm</groupId>
+            <groupId>com.github.TeamKUN.TeamKUNPluginManager</groupId>
             <artifactId>KPMModels</artifactId>
             <version>${kpm.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>net.kunmc.lab.kpm</groupId>
+            <groupId>com.github.TeamKUN.TeamKUNPluginManager</groupId>
             <artifactId>KPMResolver</artifactId>
             <version>${kpm.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>net.kunmc.lab.kpm</groupId>
+            <groupId>com.github.TeamKUN.TeamKUNPluginManager</groupId>
             <artifactId>KPMPluginInstaller</artifactId>
             <version>${kpm.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>net.kunmc.lab.kpm</groupId>
+            <groupId>com.github.TeamKUN.TeamKUNPluginManager</groupId>
             <artifactId>KPMTasks</artifactId>
             <version>${kpm.version}</version>
             <scope>compile</scope>

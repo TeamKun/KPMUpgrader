@@ -2,7 +2,7 @@ package org.kunlab.inetrnalkpm.upgrader.mocks;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import net.kunmc.lab.kpm.interfaces.KPMEnvironment;
+import org.kunlab.kpm.interfaces.KPMEnvironment;
 import org.bukkit.plugin.Plugin;
 
 import java.nio.file.Path;
