@@ -1,11 +1,11 @@
 package org.kunlab.inetrnalkpm.upgrader.mocks;
 
-import org.kunlab.kpm.interfaces.kpminfo.KPMInfoManager;
 import org.kunlab.kpm.kpminfo.KPMInformationFile;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.kunlab.kpm.kpminfo.interfaces.KPMInfoManager;
 
 import java.nio.file.Path;
 

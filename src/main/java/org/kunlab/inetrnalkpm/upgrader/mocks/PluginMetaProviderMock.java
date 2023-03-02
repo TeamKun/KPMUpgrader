@@ -1,15 +1,15 @@
 package org.kunlab.inetrnalkpm.upgrader.mocks;
 
 import org.kunlab.kpm.db.Transaction;
-import org.kunlab.kpm.enums.metadata.InstallOperator;
-import org.kunlab.kpm.interfaces.meta.PluginMetaIterator;
-import org.kunlab.kpm.interfaces.meta.PluginMetaProvider;
 import org.kunlab.kpm.meta.DependencyNode;
+import org.kunlab.kpm.meta.InstallOperator;
 import org.kunlab.kpm.meta.PluginMeta;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginLoadOrder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.kunlab.kpm.meta.interfaces.PluginMetaIterator;
+import org.kunlab.kpm.meta.interfaces.PluginMetaProvider;
 
 import java.sql.Connection;
 import java.util.Collections;

@@ -1,10 +1,10 @@
 package org.kunlab.inetrnalkpm.upgrader;
 
 import org.kunlab.kpm.interfaces.KPMRegistry;
-import org.kunlab.kpm.interfaces.resolver.result.ErrorResult;
-import org.kunlab.kpm.interfaces.resolver.result.MultiResult;
-import org.kunlab.kpm.interfaces.resolver.result.ResolveResult;
-import org.kunlab.kpm.interfaces.resolver.result.SuccessResult;
+import org.kunlab.kpm.resolver.interfaces.result.ErrorResult;
+import org.kunlab.kpm.resolver.interfaces.result.MultiResult;
+import org.kunlab.kpm.resolver.interfaces.result.ResolveResult;
+import org.kunlab.kpm.resolver.interfaces.result.SuccessResult;
 import org.kunlab.kpm.versioning.Version;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.Nullable;
