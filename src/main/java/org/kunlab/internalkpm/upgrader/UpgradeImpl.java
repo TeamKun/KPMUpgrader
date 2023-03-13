@@ -207,7 +207,7 @@ public class UpgradeImpl
             return false;
 
         boolean isLatest = this.currentKPMVersion.isNewerThanOrEqualTo(Version.of(version));
-        if (isLatest)
+        if (isLatest && !DebugConstants.DEBUG_MODE)
         {
             this.logger.warning("KPM は最新です。");
             this.destructSelf(false);
