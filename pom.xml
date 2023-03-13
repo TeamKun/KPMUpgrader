@@ -14,7 +14,7 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kpm.version>3.0.1</kpm.version>
+        <kpm.version>3.0.3</kpm.version>
     </properties>
 
     <build>
