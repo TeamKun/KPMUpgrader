@@ -206,8 +206,9 @@ public class UpgradeImpl
         if (this.currentKPMVersion == null)
             return false;
 
-        boolean isLatest = this.currentKPMVersion.isNewerThanOrEqualTo(Version.of(version));
-        if (isLatest && !DebugConstants.DEBUG_MODE)
+        boolean isLatest = this.currentKPMVersion.isNewerThanOrEqualTo(Version.of(version))
+                && !DebugConstants.DEBUG_MODE;
+        if (isLatest)
         {
             this.logger.warning("KPM は最新です。");
             this.destructSelf(false);
@@ -255,12 +256,12 @@ public class UpgradeImpl
         assert toVersion != null;
         KPMMigrator.doMigrate(this.registry, this.currentKPM.getDataFolder().toPath(), this.currentKPMVersion, toVersion);
 
-         Runner.runLater(() -> {
-             if (!this.installNewKPM(result))
-             {
-                 this.destructSelf();
-                 return;
-             }
+        Runner.runLater(() -> {
+            if (!this.installNewKPM(result))
+            {
+                this.destructSelf();
+                return;
+            }
             this.logger.info("サーバをリロードしています ...");
             this.plugin.getServer().reload();
 
