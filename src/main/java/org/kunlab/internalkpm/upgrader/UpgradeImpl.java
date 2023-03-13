@@ -172,7 +172,7 @@ public class UpgradeImpl
         {
             InstallResult<InstallTasks> installResult = new PluginInstaller(this.registry, signalHandleManager)
                     .run(InstallArgument.builder(resolveResult)
-                            .onyLocate(true)
+                            .onlyLocate(true)
                             .build()
                     );
 

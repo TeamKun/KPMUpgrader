@@ -14,7 +14,7 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kpm.version>3.0.0</kpm.version>
+        <kpm.version>3.0.1</kpm.version>
     </properties>
 
     <build>
@@ -131,7 +131,7 @@
         <dependency>
             <groupId>org.kunlab.kpm</groupId>
             <artifactId>KPMCommon</artifactId>
-            <version>3.0.0</version>
+            <version>${kpm.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

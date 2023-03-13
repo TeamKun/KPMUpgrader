@@ -2,6 +2,7 @@ package org.kunlab.internalkpm.upgrader.mocks;
 
 import lombok.Getter;
 import org.kunlab.internalkpm.upgrader.LegacySupport;
+import org.kunlab.kpm.ExceptionHandler;
 import org.kunlab.kpm.TokenStore;
 import org.kunlab.kpm.alias.interfaces.AliasProvider;
 import org.kunlab.kpm.hook.interfaces.HookExecutor;
@@ -15,7 +16,7 @@ import org.kunlab.kpm.meta.interfaces.PluginMetaManager;
 import org.kunlab.kpm.resolver.PluginResolverImpl;
 import org.kunlab.kpm.resolver.impl.github.GitHubURLResolver;
 import org.kunlab.kpm.resolver.interfaces.PluginResolver;
-import org.kunlab.kpm.task.PluginLoaderImpl;
+import org.kunlab.kpm.task.loader.PluginLoaderImpl;
 import org.kunlab.kpm.utils.ServerConditionChecker;
 import org.kunlab.kpm.versioning.Version;
 import org.jetbrains.annotations.NotNull;
@@ -32,6 +33,7 @@ public class KPMDaemonMock implements KPMRegistry
     private final PluginResolver pluginResolver;
     private final TokenStore tokenStore;
     private final PluginLoader loader;
+    private final ExceptionHandler exceptionHandler;
 
     public KPMDaemonMock(@NotNull KPMEnvironment env)
     {
@@ -39,7 +41,8 @@ public class KPMDaemonMock implements KPMRegistry
 
         this.logger = env.getLogger();
         this.pluginResolver = new PluginResolverImpl();
-        this.tokenStore = new TokenStore(env.getTokenPath(), env.getTokenKeyPath());
+        this.exceptionHandler = new ExceptionHandlerMock();
+        this.tokenStore = new TokenStore(env.getTokenPath(), env.getTokenKeyPath(), this.exceptionHandler);
         this.loader = new PluginLoaderImpl(this);
         this.init();
     }
@@ -130,6 +133,12 @@ public class KPMDaemonMock implements KPMRegistry
     public ServerConditionChecker getServerConditionChecker()
     {
         return null;
+    }
+
+    @Override
+    public org.kunlab.kpm.ExceptionHandler getExceptionHandler()
+    {
+        return this.exceptionHandler;
     }
 
     @Override

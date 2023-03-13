@@ -2,6 +2,7 @@ package org.kunlab.internalkpm.upgrader.mocks;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.kunlab.kpm.ExceptionHandler;
 import org.kunlab.kpm.interfaces.KPMEnvironment;
 import org.bukkit.plugin.Plugin;
 
@@ -83,5 +84,11 @@ public class KPMEnvironmentMock implements KPMEnvironment
     public int getHTTPMaxRedirects()
     {
         return 0;
+    }
+
+    @Override
+    public ExceptionHandler getExceptionHandler()
+    {
+        return new ExceptionHandlerMock();
     }
 }
