@@ -211,7 +211,7 @@ public class UpgradeImpl
 
     public void runUpgrade(String version)
     {
-        this.logger.info("KPM をアッグレートしています ...");
+        this.logger.info("KPM をアッグレードしています ...");
 
         SuccessResult result = this.resolveKPM(version);
         if (result == null)
