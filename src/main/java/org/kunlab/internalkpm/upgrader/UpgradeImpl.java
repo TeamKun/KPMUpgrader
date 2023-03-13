@@ -1,5 +1,6 @@
 package org.kunlab.internalkpm.upgrader;
 
+import org.bukkit.scheduler.BukkitRunnable;
 import org.kunlab.internalkpm.upgrader.migrator.KPMMigrator;
 import org.kunlab.internalkpm.upgrader.mocks.KPMDaemonMock;
 import org.kunlab.internalkpm.upgrader.mocks.KPMEnvironmentMock;
@@ -97,10 +98,17 @@ public class UpgradeImpl
         else
             destructCommand = "kpm upgrade-kpm destruct";
 
-        this.plugin.getServer().dispatchCommand(
-                this.plugin.getServer().getConsoleSender(),
-                destructCommand
-        );
+        new BukkitRunnable()
+        {
+            @Override
+            public void run()
+            {
+                UpgradeImpl.this.plugin.getServer().dispatchCommand(
+                        UpgradeImpl.this.plugin.getServer().getConsoleSender(),
+                        destructCommand
+                );
+            }
+        }.runTask(this.plugin);
     }
 
     private void destructSelf()
