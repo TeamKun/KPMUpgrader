@@ -1,6 +1,6 @@
-package org.kunlab.inetrnalkpm.upgrader.migrator.migrators;
+package org.kunlab.internalkpm.upgrader.migrator.migrators;
 
-import org.kunlab.inetrnalkpm.upgrader.migrator.KPMMigrateAction;
+import org.kunlab.internalkpm.upgrader.migrator.KPMMigrateAction;
 import org.kunlab.kpm.interfaces.KPMRegistry;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;

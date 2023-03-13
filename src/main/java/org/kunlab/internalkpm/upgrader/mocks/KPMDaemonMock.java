@@ -1,7 +1,7 @@
-package org.kunlab.inetrnalkpm.upgrader.mocks;
+package org.kunlab.internalkpm.upgrader.mocks;
 
 import lombok.Getter;
-import org.kunlab.inetrnalkpm.upgrader.LegacySupport;
+import org.kunlab.internalkpm.upgrader.LegacySupport;
 import org.kunlab.kpm.TokenStore;
 import org.kunlab.kpm.alias.interfaces.AliasProvider;
 import org.kunlab.kpm.hook.interfaces.HookExecutor;

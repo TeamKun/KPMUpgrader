@@ -1,8 +1,8 @@
-package org.kunlab.inetrnalkpm.upgrader;
+package org.kunlab.internalkpm.upgrader;
 
-import org.kunlab.inetrnalkpm.upgrader.migrator.KPMMigrator;
-import org.kunlab.inetrnalkpm.upgrader.mocks.KPMDaemonMock;
-import org.kunlab.inetrnalkpm.upgrader.mocks.KPMEnvironmentMock;
+import org.kunlab.internalkpm.upgrader.migrator.KPMMigrator;
+import org.kunlab.internalkpm.upgrader.mocks.KPMDaemonMock;
+import org.kunlab.internalkpm.upgrader.mocks.KPMEnvironmentMock;
 import org.kunlab.kpm.DebugConstants;
 import org.kunlab.kpm.installer.impls.install.InstallArgument;
 import org.kunlab.kpm.installer.impls.install.InstallTasks;

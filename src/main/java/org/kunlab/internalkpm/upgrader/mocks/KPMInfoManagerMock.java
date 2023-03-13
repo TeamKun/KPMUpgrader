@@ -1,4 +1,4 @@
-package org.kunlab.inetrnalkpm.upgrader.mocks;
+package org.kunlab.internalkpm.upgrader.mocks;
 
 import org.kunlab.kpm.kpminfo.KPMInformationFile;
 import org.bukkit.plugin.Plugin;

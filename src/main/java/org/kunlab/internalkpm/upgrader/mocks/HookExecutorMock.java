@@ -1,4 +1,4 @@
-package org.kunlab.inetrnalkpm.upgrader.mocks;
+package org.kunlab.internalkpm.upgrader.mocks;
 
 import lombok.AllArgsConstructor;
 import org.kunlab.kpm.hook.interfaces.HookExecutor;

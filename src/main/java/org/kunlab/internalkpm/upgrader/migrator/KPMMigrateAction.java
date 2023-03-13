@@ -1,4 +1,4 @@
-package org.kunlab.inetrnalkpm.upgrader.migrator;
+package org.kunlab.internalkpm.upgrader.migrator;
 
 import org.kunlab.kpm.interfaces.KPMRegistry;
 import org.jetbrains.annotations.NotNull;

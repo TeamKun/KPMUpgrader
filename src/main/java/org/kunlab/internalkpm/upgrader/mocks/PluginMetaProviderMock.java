@@ -1,4 +1,4 @@
-package org.kunlab.inetrnalkpm.upgrader.mocks;
+package org.kunlab.internalkpm.upgrader.mocks;
 
 import org.kunlab.kpm.db.Transaction;
 import org.kunlab.kpm.meta.DependencyNode;

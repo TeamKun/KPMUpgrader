@@ -1,7 +1,7 @@
-package org.kunlab.inetrnalkpm.upgrader.migrator.migrators;
+package org.kunlab.internalkpm.upgrader.migrator.migrators;
 
-import org.kunlab.inetrnalkpm.upgrader.KPMUpgrader;
-import org.kunlab.inetrnalkpm.upgrader.migrator.KPMMigrateAction;
+import org.kunlab.internalkpm.upgrader.KPMUpgrader;
+import org.kunlab.internalkpm.upgrader.migrator.KPMMigrateAction;
 import org.kunlab.kpm.interfaces.KPMRegistry;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.configuration.file.FileConfiguration;

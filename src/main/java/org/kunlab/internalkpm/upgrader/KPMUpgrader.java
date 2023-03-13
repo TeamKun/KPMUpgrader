@@ -1,4 +1,4 @@
-package org.kunlab.inetrnalkpm.upgrader;
+package org.kunlab.internalkpm.upgrader;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
