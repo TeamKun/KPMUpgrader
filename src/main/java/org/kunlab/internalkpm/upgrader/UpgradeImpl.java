@@ -76,7 +76,7 @@ public class UpgradeImpl
             if(DebugConstants.DEBUG_MODE)
                 this.logger.info("The current KPM is legacy version but auto upgrade is disabled due to debug mode.");
             else
-                this.runUpgrade(LegacySupport.fetchLatestVersion(this.registry));
+                Runner.runAsync(() -> this.runUpgrade(LegacySupport.fetchLatestVersion(this.registry)));
         }
     }
 

@@ -1,5 +1,6 @@
 package org.kunlab.internalkpm.upgrader;
 
+import net.kunmc.lab.peyangpaperutils.lib.utils.Runner;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -52,7 +53,7 @@ public final class KPMUpgrader extends JavaPlugin implements CommandExecutor
 
         String toVersion = args[0];
 
-        this.impl.runUpgrade(toVersion);
+        Runner.runAsync(() -> this.impl.runUpgrade(toVersion));
         return true;
     }
 }
